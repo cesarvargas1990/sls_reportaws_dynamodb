@@ -19,11 +19,11 @@ provider:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
-        - s3:*
       Resource:
         - { "Fn::GetAtt": ["ReportTable", "Arn" ] }
   environment:
     REPORT_TABLE: ${self:custom.tableName}
+    BUCKET_NAME: ${self:custom.bucket}
 
 functions:
   create:
@@ -32,7 +32,13 @@ functions:
       - http:
           path: report
           method: post
-          
+
+  edit:
+    handler: report/edit.edit
+    events:
+      - http:
+          path: report/{id}
+          method: put
 
   get:
     handler: report/get.get
@@ -55,11 +61,11 @@ functions:
           path: csv
           method: get
 
-  pdf:
-    handler: report/pdf.pdf
+  pdf_report:
+    handler: report/pdf_report.pdf_report
     events:
-      - http:
-          path: csv
+      - httpApi:
+          path: /api/pdf_report
           method: get
 
   delete:

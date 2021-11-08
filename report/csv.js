@@ -21,35 +21,35 @@ module.exports.csv = (event, context, callback) => {
 
         const fields = [
             {
-                label : 'Name',
+                label: 'Name',
                 value: `name`,
             },
             {
-                label : 'Alias',
+                label: 'Alias',
                 value: `alias`,
             },
             {
-                label : 'Species',
+                label: 'Species',
                 value: `species`,
             },
             {
-                label : 'Company Name',
+                label: 'Company Name',
                 value: `company.name`,
             },
             {
-                label : 'Company Team',
+                label: 'Company Team',
                 value: `company.team`,
             }
         ];
-        const opts = { fields, delimiter: '\;' ,quote: ''};
+        const opts = { fields, delimiter: '\;', quote: '' };
         const parser = new Parser(opts);
         const csv = parser.parse(result.Items);
 
         const response = {
             statusCode: 200,
-            headers: {"content-type": "text/csv"},
+            headers: { "content-type": "text/csv" },
             body: csv
-            
+
         };
         callback(null, response);
     });
