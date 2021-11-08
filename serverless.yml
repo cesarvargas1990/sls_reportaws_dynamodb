@@ -2,6 +2,7 @@ service: serverless-aws-nodejs
 
 custom:
   tableName: 'reports-${self:provider.stage}'
+  bucket: s3-upload-pdfreports
 
 provider:
   name: aws
@@ -18,6 +19,7 @@ provider:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
+        - s3:*
       Resource:
         - { "Fn::GetAtt": ["ReportTable", "Arn" ] }
   environment:
@@ -30,6 +32,7 @@ functions:
       - http:
           path: report
           method: post
+          
 
   get:
     handler: report/get.get
@@ -37,6 +40,34 @@ functions:
       - http:
           path: report/{id}
           method: get
+
+  all:
+    handler: report/all.all
+    events:
+      - http:
+          path: reports
+          method: get
+
+  csv:
+    handler: report/csv.csv
+    events:
+      - http:
+          path: csv
+          method: get
+
+  pdf:
+    handler: report/pdf.pdf
+    events:
+      - http:
+          path: csv
+          method: get
+
+  delete:
+    handler: report/delete.delete
+    events:
+      - http:
+          path: report/{id}
+          method: delete
 
 resources:
   Resources:

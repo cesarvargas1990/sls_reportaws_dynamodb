@@ -4,16 +4,16 @@ const bodyParser = require('body-parser')
 const AWS = require('aws-sdk')
 const app = express()
 app.use(bodyParser.json({ strict: false }));
-const UserTable = process.env.REPORT_TABLE
+const ReportTable = process.env.REPORT_TABLE
 const dynamoDb = new AWS.DynamoDB.DocumentClient()
 
 console.log('-------------env', process.env)
-console.log({ UserTable })
+console.log({ ReportTable })
 app.post('/report', async (req, res) => {
     const { body } = req
     const { id, name } = body
     const params = {
-        TableName: UserTable,
+        TableName: ReportTable,
         Item: {
             id: id,
             name: name

@@ -3,15 +3,12 @@ const AWS = require('aws-sdk')
 const ReportTable = process.env.REPORT_TABLE
 const dynamoDb = new AWS.DynamoDB.DocumentClient()
 
-module.exports.delete = (event, context, callback) => {
+module.exports.all = (event, context, callback) => {
     const params = {
-        TableName: ReportTable,
-        Key: {
-            id: event.pathParameters.id,
-        },
+        TableName: ReportTable
     };
 
-    dynamoDb.delete(params, (error, result) => {
+    dynamoDb.scan(params, (error, result) => {
         if (error) {
             console.error(error);
             callback(null, {
@@ -24,7 +21,7 @@ module.exports.delete = (event, context, callback) => {
 
         const response = {
             statusCode: 200,
-            body: JSON.stringify(result.Item),
+            body: JSON.stringify(result.Items),
         };
         callback(null, response);
     });

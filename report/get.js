@@ -1,11 +1,11 @@
 const sls = require('serverless-http')
 const AWS = require('aws-sdk')
-const UserTable = process.env.REPORT_TABLE
+const ReportTable = process.env.REPORT_TABLE
 const dynamoDb = new AWS.DynamoDB.DocumentClient()
 
 module.exports.get = (event, context, callback) => {
     const params = {
-        TableName: UserTable,
+        TableName: ReportTable,
         Key: {
             id: event.pathParameters.id,
         },
@@ -22,7 +22,6 @@ module.exports.get = (event, context, callback) => {
             return;
         }
 
-        // create a response
         const response = {
             statusCode: 200,
             body: JSON.stringify(result.Item),
