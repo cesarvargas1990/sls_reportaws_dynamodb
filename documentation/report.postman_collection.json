@@ -48,7 +48,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"alvaro uribe\",\n    \"alias\": \"narco 82\",\n    \"species\": \"species\",\n    \"company\": {\n        \"name\": \"polombia\",\n        \"team\": \"centro democratico\"\n    }\n}",
+					"raw": "{}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -131,7 +131,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"alvaro uribe velez\",\n    \"alias\": \"narco 82\",\n    \"species\": \"cocaina\",\n    \"company\": {\n        \"name\": \"polombia\",\n        \"team\": \"centro democratico alternativo22\"\n    }\n}",
+					"raw": "{}",
 					"options": {
 						"raw": {
 							"language": "json"
