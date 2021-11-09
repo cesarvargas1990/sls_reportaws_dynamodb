@@ -11,14 +11,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sts3dnagf9.execute-api.us-east-1.amazonaws.com/api/pdf_report",
-					"protocol": "https",
+					"raw": "{{awsPdfReportEndPoint}}/api/pdf_report",
 					"host": [
-						"sts3dnagf9",
-						"execute-api",
-						"us-east-1",
-						"amazonaws",
-						"com"
+						"{{awsPdfReportEndPoint}}"
 					],
 					"path": [
 						"api",
@@ -34,14 +29,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://ppoziu3l24.execute-api.us-east-1.amazonaws.com/dev/csv",
-					"protocol": "https",
+					"raw": "{{awsReportEndPoint}}/dev/csv",
 					"host": [
-						"ppoziu3l24",
-						"execute-api",
-						"us-east-1",
-						"amazonaws",
-						"com"
+						"{{awsReportEndPoint}}"
 					],
 					"path": [
 						"dev",
@@ -66,14 +56,9 @@
 					}
 				},
 				"url": {
-					"raw": "https://ppoziu3l24.execute-api.us-east-1.amazonaws.com/dev/report",
-					"protocol": "https",
+					"raw": "{{awsReportEndPoint}}/dev/report",
 					"host": [
-						"ppoziu3l24",
-						"execute-api",
-						"us-east-1",
-						"amazonaws",
-						"com"
+						"{{awsReportEndPoint}}"
 					],
 					"path": [
 						"dev",
@@ -89,14 +74,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://ppoziu3l24.execute-api.us-east-1.amazonaws.com/dev/report/3RqPQ8zTxSsl-dr9ISgw4h7mMwyncqfxID5WFjWx",
-					"protocol": "https",
+					"raw": "{{awsReportEndPoint}}/dev/report/3RqPQ8zTxSsl-dr9ISgw4h7mMwyncqfxID5WFjWx",
 					"host": [
-						"ppoziu3l24",
-						"execute-api",
-						"us-east-1",
-						"amazonaws",
-						"com"
+						"{{awsReportEndPoint}}"
 					],
 					"path": [
 						"dev",
@@ -113,14 +93,9 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://ppoziu3l24.execute-api.us-east-1.amazonaws.com/dev/report/TT8HCklKNXnKsAqvp9W1J8zvSEQem1o__rF3x3cy",
-					"protocol": "https",
+					"raw": "{{awsReportEndPoint}}/dev/report/TT8HCklKNXnKsAqvp9W1J8zvSEQem1o__rF3x3cy",
 					"host": [
-						"ppoziu3l24",
-						"execute-api",
-						"us-east-1",
-						"amazonaws",
-						"com"
+						"{{awsReportEndPoint}}"
 					],
 					"path": [
 						"dev",
@@ -137,14 +112,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://ppoziu3l24.execute-api.us-east-1.amazonaws.com/dev/reports",
-					"protocol": "https",
+					"raw": "{{awsReportEndPoint}}/dev/reports",
 					"host": [
-						"ppoziu3l24",
-						"execute-api",
-						"us-east-1",
-						"amazonaws",
-						"com"
+						"{{awsReportEndPoint}}"
 					],
 					"path": [
 						"dev",
@@ -169,14 +139,9 @@
 					}
 				},
 				"url": {
-					"raw": "https://ppoziu3l24.execute-api.us-east-1.amazonaws.com/dev/report/3RqPQ8zTxSsl-dr9ISgw4h7mMwyncqfxID5WFjWx",
-					"protocol": "https",
+					"raw": "{{awsReportEndPoint}}/dev/report/3RqPQ8zTxSsl-dr9ISgw4h7mMwyncqfxID5WFjWx",
 					"host": [
-						"ppoziu3l24",
-						"execute-api",
-						"us-east-1",
-						"amazonaws",
-						"com"
+						"{{awsReportEndPoint}}"
 					],
 					"path": [
 						"dev",
