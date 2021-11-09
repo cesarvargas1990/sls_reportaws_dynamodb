@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "cbb4c46c-d38a-4a77-8049-9aaa2629e4ce",
+		"_postman_id": "6f0ce2bf-986a-4929-af1a-d8e8f34161c9",
 		"name": "report",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -48,7 +48,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{}",
+					"raw": "{\n    \"name\": \"Name example\",\n    \"alias\": \"Alias example\",\n    \"species\": \"species example\",\n    \"company\": {\n        \"name\": \"company name example\",\n        \"team\": \"company team example\"\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
