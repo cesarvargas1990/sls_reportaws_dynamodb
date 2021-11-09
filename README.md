@@ -16,7 +16,7 @@ Configure your aws credentials
 Execute the command in the root folder of the project for install the node packages located in `package.json` file
 ### `sls deploy`
 Deploy serverless stack to AWS cloud.
-### `sls test`
+### `npm test`
 Execute jests tests
 ## Configure postman endpoint
 - take the url part of the endpoint similar to the following:
