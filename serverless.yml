@@ -1,4 +1,3 @@
-
 service: serverless-aws-nodejs
 
 custom:
