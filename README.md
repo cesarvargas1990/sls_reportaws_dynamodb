@@ -33,6 +33,11 @@ Consume in postman any of the following services:
 - Get All Reports
 - Generate CSV Report
 - Generate PDF Report
-## Run integration test
+## Run integration test in postman
 Press right click on the collection in postman, in the menu that is displayed select run collection
 then click on the button run report, this will launch the execution of the integration tests
+## Run integration test in console with newman
+Run the next command
+replace the vars `awsPdfReportEndPoint` and `awsReportEndPoint` with the endpoint url
+### `newman run documentation/report.postman_collection.json --global-var "awsPdfReportEndPoint=https://sts3dnagf9.execute-api.us-east-1.amazonaws.com" --global-var "awsReportEndPoint=https://ppoziu3l24.execute-api.us-east-1.amazonaws.com"`   
+
