@@ -2,14 +2,14 @@
 For the project was used [NodeJs Serverless Stack](https://www.serverless.com/framework/docs/providers/aws/examples/hello-world/node).
 In site serverless view the installation instructions for serverless
 ## Previous Steps
+- Clone this report
+- Install or have an node js environment view site for installation instructions:
+[NodeJs Instalation instructions](https://www.serverless.com/framework/docs/providers/aws/examples/hello-world/node)
 - Install serverless
 ## `npm i serverless`
 - Install newman
 ## `npm install -g newman`
-- Clone this report
 - Have a aws account(free)
-- Install or have an aws cli
-- Install or have an node js environment
 ## View Documentation 
 View the file `manual.pdf` located in `documentation` folder
 ## Import Postman collection
