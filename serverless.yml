@@ -1,5 +1,4 @@
-org: cesaravargas1990
-app: serverless-aws-nodejs
+
 service: serverless-aws-nodejs
 
 custom:
