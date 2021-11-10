@@ -7,6 +7,23 @@
 	"item": [
 		{
 			"name": "Generate PDF Report",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type header is application/json\", () => {",
+							"  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/pdf');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -25,6 +42,22 @@
 		},
 		{
 			"name": "Generate CSV Report",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Content-Type header is text/csv\", () => {",
+							"  pm.expect(pm.response.headers.get('Content-Type')).to.eql('text/csv');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -43,6 +76,28 @@
 		},
 		{
 			"name": "Create Report",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Validate json response data created\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.name).to.eql(\"Name example\");",
+							"    pm.expect(jsonData.alias).to.eql(\"Alias example\");",
+							"    pm.expect(jsonData.species).to.eql(\"species example\");",
+							"    pm.collectionVariables.set(\"id\", jsonData.id);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -70,18 +125,35 @@
 		},
 		{
 			"name": "Get Report by Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Get report by id\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"id\"));",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{awsReportEndPoint}}/dev/report/3RqPQ8zTxSsl-dr9ISgw4h7mMwyncqfxID5WFjWx",
+					"raw": "{{awsReportEndPoint}}/dev/report/{{id}}",
 					"host": [
 						"{{awsReportEndPoint}}"
 					],
 					"path": [
 						"dev",
 						"report",
-						"3RqPQ8zTxSsl-dr9ISgw4h7mMwyncqfxID5WFjWx"
+						"{{id}}"
 					]
 				}
 			},
@@ -89,18 +161,31 @@
 		},
 		{
 			"name": "Delete Report by Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{awsReportEndPoint}}/dev/report/TT8HCklKNXnKsAqvp9W1J8zvSEQem1o__rF3x3cy",
+					"raw": "{{awsReportEndPoint}}/dev/report/{{id}}",
 					"host": [
 						"{{awsReportEndPoint}}"
 					],
 					"path": [
 						"dev",
 						"report",
-						"TT8HCklKNXnKsAqvp9W1J8zvSEQem1o__rF3x3cy"
+						"{{id}}"
 					]
 				}
 			},
@@ -108,6 +193,19 @@
 		},
 		{
 			"name": "Get All Reports",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -126,12 +224,32 @@
 		},
 		{
 			"name": "Update Report",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Validate json response data created\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.name).to.eql(\"Cesar Vargas\");",
+							"    pm.expect(jsonData.alias).to.eql(\"Edit test\");",
+							"    pm.expect(jsonData.species).to.eql(\"special\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{}",
+					"raw": "{\n    \"name\": \"Cesar Vargas\",\n    \"alias\": \"Edit test\",\n    \"species\": \"special\",\n    \"company\": {\n        \"name\": \"company name example\",\n        \"team\": \"company team example\"\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -139,18 +257,24 @@
 					}
 				},
 				"url": {
-					"raw": "{{awsReportEndPoint}}/dev/report/3RqPQ8zTxSsl-dr9ISgw4h7mMwyncqfxID5WFjWx",
+					"raw": "{{awsReportEndPoint}}/dev/report/{{id}}",
 					"host": [
 						"{{awsReportEndPoint}}"
 					],
 					"path": [
 						"dev",
 						"report",
-						"3RqPQ8zTxSsl-dr9ISgw4h7mMwyncqfxID5WFjWx"
+						"{{id}}"
 					]
 				}
 			},
 			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": ""
 		}
 	]
 }

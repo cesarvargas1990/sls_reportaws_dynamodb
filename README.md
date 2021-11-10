@@ -32,3 +32,5 @@ Consume in postman any of the following services:
 - Get All Reports
 - Generate CSV Report
 - Generate PDF Report
+## Run integration test
+Press right click on the collection in postman, in the menu that is displayed select run collection
