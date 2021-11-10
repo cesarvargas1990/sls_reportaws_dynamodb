@@ -39,5 +39,5 @@ then click on the button run report, this will launch the execution of the integ
 ## Run integration test in console with newman
 Run the next command
 replace the vars `awsPdfReportEndPoint` and `awsReportEndPoint` with the endpoint url
-### `newman run documentation/report.postman_collection.json --global-var "awsPdfReportEndPoint=https://sts3dnagf9.execute-api.us-east-1.amazonaws.com" --global-var "awsReportEndPoint=https://ppoziu3l24.execute-api.us-east-1.amazonaws.com"`   
+### `newman run documentation/report.postman_collection.json --global-var "awsPdfReportEndPoint=https://xxxx.execute-api.us-east-1.amazonaws.com" --global-var "awsReportEndPoint=https://xxxxx.execute-api.us-east-1.amazonaws.com"`   
 
