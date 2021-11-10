@@ -133,9 +133,9 @@
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});",
-							"pm.test(\"the name field has more than 30 characters\", function () {",
+							"pm.test(\"the name field has more than 25 characters\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.message).to.eql(\"\\\"name\\\" length must be less than or equal to 30 characters long\");",
+							"    pm.expect(jsonData.message).to.eql(\"\\\"name\\\" length must be less than or equal to 25 characters long\");",
 							"});",
 							""
 						],
@@ -326,9 +326,9 @@
 							"    pm.response.to.have.status(200);",
 							"});",
 							"",
-							"pm.test(\"the name field has more than 30 characters\", function () {",
+							"pm.test(\"the name field has more than 25 characters\", function () {",
 							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.message).to.eql(\"\\\"name\\\" length must be less than or equal to 30 characters long\");",
+							"    pm.expect(jsonData.message).to.eql(\"\\\"name\\\" length must be less than or equal to 25 characters long\");",
 							"});"
 						],
 						"type": "text/javascript"
