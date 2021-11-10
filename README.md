@@ -2,6 +2,7 @@
 For the project was used [NodeJs Serverless Stack](https://www.serverless.com/framework/docs/providers/aws/examples/hello-world/node).
 In site serverless view the installation instructions for serverless
 ## Previous Steps
+- Clone this report
 - Have a aws account(free)
 - Install or have an aws cli
 - Install or have an node js environment
@@ -34,3 +35,4 @@ Consume in postman any of the following services:
 - Generate PDF Report
 ## Run integration test
 Press right click on the collection in postman, in the menu that is displayed select run collection
+then click on the button run report, this will launch the execution of the integration tests
