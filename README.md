@@ -5,10 +5,10 @@ In site serverless view the installation instructions for serverless
 - Clone this report
 - Install or have an node js environment view site for installation instructions:
 [NodeJs Instalation instructions](https://www.serverless.com/framework/docs/providers/aws/examples/hello-world/node)
-- Install serverless
 ## `npm i serverless`
-- Install newman
+- Install serverless
 ## `npm install -g newman`
+- Install newman
 - Have a aws account(free)
 ## View Documentation 
 View the file `manual.pdf` located in `documentation` folder
