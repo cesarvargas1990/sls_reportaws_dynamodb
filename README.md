@@ -2,6 +2,10 @@
 For the project was used [NodeJs Serverless Stack](https://www.serverless.com/framework/docs/providers/aws/examples/hello-world/node).
 In site serverless view the installation instructions for serverless
 ## Previous Steps
+- Install serverless
+## `npm i serverless`
+- Install newman
+## `npm install -g newman`
 - Clone this report
 - Have a aws account(free)
 - Install or have an aws cli
